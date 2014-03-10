@@ -1,100 +1,9 @@
-/*   FONTS   */
+@import "reset";
+@import "variables";
+@import "fonts";
+@import "mixins";
 
-@font_folder: 'fonts/';
 
-@font-face {
-    font-family: 'antoniobold';
-    src: local('Antonio Bold');
-    src: local('Antonio');
-    src: url('@{font_folder}antonio-bold-webfont.eot');
-    src: url('@{font_folder}antonio-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('@{font_folder}antonio-bold-webfont.woff') format('woff'),
-         url('@{font_folder}antonio-bold-webfont.ttf') format('truetype'),
-         url('@{font_folder}antonio-bold-webfont.svg#antoniobold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*   CSS RESET   */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/*   ---   LESS   ---   */
-
-/*   VARIABLES   */
-
-@font1: 'Source Sans Pro'; /* default font */
-@font1_backup: 'sans-serif'; /* backup default font */
-@font2: 'antoniobold'; /* second font */
-@font2_backup: 'Arial'; /* backup second font */
-
-@width: 1024px; /* container width */
-@unit: 15px; /* default unit to mesure vertical paddings, margins, heights etc... */
-@radius: 2px; /* default border radius */
-
-@img_src: 'Images/'; /* path to the images folder */
-
-@color1: #ec3d00; /* orange  /  buttons etc... */
-@color1_dark: darken(@color1, 5%); /* darker orange */
-@color2: #f9faed; /* white-ish  /  text with background color or images */
-@color3: #333333; /* black-ish  /  all other text */
-@color4: #cccccc; /* grey  /  borders on search */
-@color5: #ebebeb; /* light grey  /  odd li's background color */
-@color6: #88c83f; /* survey header background */
-@color7: #7d4887; /* new articles header background */
-@color8: #378dd4; /* hot articles header background */
-@color9: #ffcf00; /* recognition header background */
-@color10: #999999; /* placeholder color */
-@color11: #ffcf00; /* second separator color */
-
-@font-size1: 12px; /* right side p font */
-@font-size2: 14px; /* left side p font */
-@font-size3: 15px; /* h2 font */
-@font-size4: 18px; /* buttons and alert text */
-@font-size5: 22px; /* nav and serach bar font */
-@font-size6: 36px; /* h1 font */
 
 /*   STYLE   */
 
@@ -113,12 +22,7 @@ h1,h2,nav,.submit,#alert-text{
 	font-weight: bold;
 }
 
-.border-radius(@radius1: @radius, @radius2: @radius, @radius3: @radius, @radius4: @radius){
-	-moz-border-radius: @radius1 @radius2 @radius3 @radius4;
-    -webkit-border-radius: @radius1 @radius2 @radius3 @radius4;
-    -khtml-border-radius: @radius1 @radius2 @radius3 @radius4;
-    border-radius: @radius1 @radius2 @radius3 @radius4;
-}
+
 
 .container{
 	position: relative;
