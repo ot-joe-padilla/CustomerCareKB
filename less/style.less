@@ -2,6 +2,7 @@
 @import "variables";
 @import "fonts";
 @import "mixins";
+@import "icons";
 
 
 
@@ -17,7 +18,7 @@ input::-moz-focus-inner /*Remove button padding in FF*/
     padding: 5px 0 0 0;
 }
 
-h1,h2,nav,.submit,#alert-text{
+h1,h2,nav,.submit,.alert-text{
 	font-family: @font2, @font2_backup;
 	font-weight: bold;
 }
@@ -37,9 +38,12 @@ header{
 	background-size: cover;
 }
 
-#logo{
+.logo{
 	display: block;
 	margin: auto;
+	background-position: 0 0;
+	width: 254px;
+	height: 50px;
 }
 
 nav{
@@ -62,7 +66,7 @@ nav{
 	}
 } 
 
-#header-login{
+.header-login{
 	position: absolute;
 	top: @unit;
 	right: 32px;
@@ -73,15 +77,6 @@ nav{
 		text-align: center;
 		margin-bottom: (@unit * 0.33333);
 	}
-}
-
-#login{
-	height: (@unit * 2 - 2);
-	font-size: @font-size4;
-	line-height: (@unit * 2);
-    margin-bottom: @unit;
-    float: none;
-    .border-radius();
 }
 
 .submit{
@@ -99,14 +94,23 @@ nav{
 	.border-radius(0px,@radius,@radius,0px);
 }
 
-#danielle-submit{
+.login{
+	height: (@unit * 2 - 2);
+	font-size: @font-size4;
+	line-height: (@unit * 2);
+    margin-bottom: @unit;
+    float: none;
+    .border-radius();
+}
+
+.danielle-submit{
 	height: (@unit * 2 - 2);
     font-size: @font-size4;
     line-height: (@unit * 2);
     .border-radius();
 }
 
-#alert{
+.alert{
 	background-color: @color3;
 	min-width: @width;
 
@@ -119,7 +123,7 @@ nav{
 	}
 }
 
-#alert,#page-content,form{
+.alert,.page-content,form{
 
 	&:after{
 	content: "";
@@ -128,16 +132,22 @@ nav{
 	}
 }
 
-#alert-icon{
-	background: url("@{img_src}alert-icon.png") no-repeat center center;
+.alert-icon{
 	background-color: @color1_dark;
 	width: 30px;
 	height: (@unit * 2);
 	float: left;
 	margin-left: 32px;
+
+	div{
+		background-position: -143px -82px;
+		width: 15px;
+		height: 15px;
+		margin: (((@unit * 2) - 15) / 2) 7.5px; 
+	}
 }
 
-#alert-text{
+.alert-text{
 	background-color: @color1;
 	color: @color2;
 	line-height: (@unit * 2);
@@ -147,18 +157,18 @@ nav{
 	font-size: @font-size4;
 }
 
-#page-content{
+.page-content{
 	padding-left: 32px;
 	padding-top: (@unit * 2);
 	padding-bottom: (@unit * 4);
 	min-width: @width - 32px;
 }
 
-#left-side{
+.left-side{
 	float: left;
 }
 
-#right-side{
+.right-side{
 	float: left;
 	margin-left: 10px;
 	background-color: @color2;
@@ -176,28 +186,29 @@ nav{
 	}
 }
 
-#search-block{
+.search-block{
 	margin-bottom: (@unit * 4);
 }
 
-#search-icon{
+.search-icon{
 	float: left;
 	width: 89px;
 	height: (@unit * 3 - 3);
-	background: url("@{img_src}search-icon.png")no-repeat center center;
 	border-top: 2px solid @color4;
 	border-left: 1px solid @color4;
 	border-bottom: 1px solid @color4;
 	border-right: none;
 	.border-radius(@radius,0px,0px,@radius);
+
+	div{
+		background-position: -159px -82px;
+		width: 20px;
+		height: 20px;
+		margin: (((@unit * 3 - 3) - 20) / 2) 34.5px;
+	}
 }
 
-.placeholder(){
-	color: @color10;
-   	font-style: italic;
-}
-
-#search{
+.search{
 	float: left;
 	width: 730px;
 	height: (@unit * 3 - 5);
@@ -241,31 +252,55 @@ h1{
 	vertical-align: top;
 }
 
-#survey{
-	background: url("@{img_src}survey-icon.png") no-repeat center center;
+.survey{
 	background-color: @color6;
+
+	div{
+		background-position: -224px -51px;
+		width: 23px;
+		height: 30px;
+		margin: 7.5px 11px;
+	}
 }
 
-#new-articles{
-	background: url("@{img_src}new-articles-icon.png") no-repeat center center;
+.new-articles{
 	background-color: @color7;
+
+	div{
+		background-position: -174px -51px;
+		width: 26px;
+		height: 30px;
+		margin: 7.5px 9.5px;
+	}
 }
 
-#hot-articles{
-	background: url("@{img_src}hot-articles-icon.png") no-repeat center center;
+.hot-articles{
 	background-color: @color8;
+
+	div{
+		background-position: -143px -51px;
+		width: 30px;
+		height: 30px;
+		margin: 7.5px;
+	}
 }
 
-#recognition-icon{
-	background: url("@{img_src}recognition-icon.png") no-repeat center center;
+.recognition-icon{
 	background-color: @color9;
+
+	div{
+		background-position: -201px -51px;
+		width: 22px;
+		height: 30px;
+		margin: 7.5px 11.5px;
+	}
 }
 
 section{
 	width: 719px;
 }
 
-#survey-block{
+.survey-block{
 	background-color: @color2;
 	padding: @unit 15px;
 	margin-top: @unit;
@@ -315,8 +350,7 @@ ul{
 	}
 
 	span{
-		width: 26px;
-		height: @unit;
+		height: 15px;
 		display: inline-block;
 		margin-right: 15px;
 		margin-left: 15px;
@@ -325,20 +359,24 @@ ul{
 	}
 }
 
-#article-icon{
-	background: url("@{img_src}article-icon.png") no-repeat center center;
+.article-icon{
+	background-position: -180px -82px;
+	width: 26px;
 }
 
-#checklist-icon{
-	background: url("@{img_src}checklist-icon.png") no-repeat center center;
+.checklist-icon{
+	background-position: -207px -82px;
+	width: 25px;
 }
 
-#video-icon{
-	background: url("@{img_src}video-icon.png") no-repeat center center;
+.video-icon{
+	background-position: -167px -103px;
+	width: 25px;
 }
 
-#file-icon{
-	background: url("@{img_src}file-icon.png") no-repeat center center;
+.file-icon{
+	background-position: -143px -103px;
+	width: 23px;
 }
 
 .right-sector{
@@ -355,19 +393,19 @@ ul{
 }
 
 .sector-image{
-	width: 75px;
-	height: 70px;
+	width: 70px;
+	height: 75px;
 	position: absolute;
 	top: 0px;
-	right: -85px;
+	right: -80px;
 }
 
-#winner{
-	background: url("@{img_src}winner.png") no-repeat center center;
+.winner{
+	background-position: -72px -51px;
 }
 
-#contest{
-	background: url("@{img_src}contest.png") no-repeat center center;
+.contest{
+	background-position: 0 -51px;
 }
 
 footer{

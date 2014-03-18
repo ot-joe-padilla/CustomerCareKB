@@ -1,6 +1,6 @@
 /*   FONTS   */
 
-@font_src: 'fonts/';
+@font_src: '../fonts/';
 
 @font-face {
     font-family: 'antoniobold';
@@ -75,7 +75,7 @@ table {
 @unit: 15px; /* default unit to mesure vertical paddings, margins, heights etc... */
 @radius: 2px; /* default border radius */
 
-@images_src: 'Images/'; /* path to the images folder */
+@images_src: '../Images/'; /* path to the images folder */
 
 @color1: #ec3d00; /* orange  /  buttons etc... */
 @color1_dark: darken(@color1, 5%); /* darker orange */
@@ -100,7 +100,11 @@ body{
 	font-family: @font1, @font1_backup;
 }
 
-nav, .submit, h1, h2, h3, #dates{
+.logo, .search-icon div{
+	background: url("@{images_src}sprites.png");
+}
+
+nav, .submit, h1, h2, h3, .dates{
 	font-family: @font2, @font2_backup;
 	font-weight: bold;
 }
@@ -130,9 +134,12 @@ header{
 	padding: (@unit * 1.33333) 0;
 }
 
-#logo{
+.logo{
 	display: block;
 	margin: auto;
+	background-position: 0 0;
+	width: 254px;
+	height: 50px;
 }
 
 nav{
@@ -156,7 +163,7 @@ nav{
 	}
 }
 
-#header-login{
+.header-login{
 	position: absolute;
 	top: @unit;
 	right: (@unit * 2);
@@ -167,14 +174,6 @@ nav{
 		text-align: center;
 		margin-bottom: (@unit * 0.33333);
 	}
-}
-
-#login{
-	height: (@unit * 2 - 2);
-	font-size: @font-size4;
-    margin-bottom: @unit;
-    float: none;
-    line-height: (@unit * 2);
 }
 
 .submit{
@@ -192,21 +191,29 @@ nav{
     line-height: (@unit * 3);
 }
 
-#background{
+.login{
+	height: (@unit * 2 - 2);
+	font-size: @font-size4;
+    margin-bottom: @unit;
+    float: none;
+    line-height: (@unit * 2);
+}
+
+.background{
 	background: url("@{images_src}background.jpg") no-repeat center bottom;
 	background-size: cover;
 	padding-top: (@unit * 10);
 	display: table;
 }
 
-#left-side{
+.left-side{
 	width: 243px;
 	background-color: @color5;
 	padding: (@unit * 3) 0 0 32px;
 	display: table-cell;
 }
 
-#right-side{
+.right-side{
 	background-color: @color6;
 	padding: 0;
 	font-size: @font-size2;
@@ -214,13 +221,13 @@ nav{
 	vertical-align: top;
 }
 
-#right-side-content{
+.right-side-content{
 	background-color: @color6;
 	margin-top: -(@unit * 6);
 	padding: (@unit * 3) 32px (@unit * 21);
 }
 
-form, #question{
+form, .question{
 
 	&:after{
 	content: "";
@@ -229,17 +236,23 @@ form, #question{
 	}
 }
 
-#search-icon{
+.search-icon{
 	float: left;
 	width: 43px;
 	height: (@unit * 3 - 3);
-	background: url("@{images_src}search-icon.png")no-repeat center center;
 	border-top: 2px solid @color4;
 	border-left: 1px solid @color4;
 	border-bottom: 1px solid @color4;
 	border-right: none;
 	.border-radius(@radius, 0px, 0px, @radius);
     background-color: @color6;
+
+    div{
+		background-position: -159px -82px;
+		width: 20px;
+		height: 20px;
+		margin: (((@unit * 3 - 3) - 20) / 2) 11.5px;
+	}
 }
 
 .placeholder{
@@ -247,7 +260,7 @@ form, #question{
 	font-style: italic;
 }
 
-#search{
+.search{
 	float: left;
 	width: 189px;
 	height: (@unit * 3 - 5);
@@ -278,7 +291,7 @@ form, #question{
 	}
 }
 
-#search-button{
+.search-button{
 	width: 231px;
 	margin-top: @unit;
 }
@@ -289,13 +302,13 @@ h1{
 	line-height: 42px;
 }
 
-#dates{
+.dates{
 	font-size: @font-size1;
 	color: @color1;
 	margin: @unit 0;
 }
 
-#text{
+.text{
 	color: @color3;
 	line-height: 21px;
 }
@@ -343,7 +356,7 @@ h2{
 	font-size: @font-size6;
 }
 
-#links-list{
+.links-list{
 	margin-left: 16px;
 	list-style-type: disc;
 
